@@ -11,7 +11,7 @@
   {{ if ge $section_count 1 }}
     {{/* Derive the section name  */}}
     {{ $section_name := index (.Site.Params.mainSections) 0 }}
-
+    
     <div class="pa3 pa4-ns w-100 w-70-ns center">
       {{/* Use $section_name to get the section title. Use "with" to only show it if it exists */}}
        {{ with .Site.GetPage "section" $section_name }}
@@ -30,7 +30,9 @@
           </div>
         {{ end }}
       </section>
-
-      </div>
+    </div>
+    <section class="pa3 pa4-ns w-100 w-70-ns center">  
+        {{ partial "sponsors_partial.html" . }}
+    </section>
   {{ end }}
 {{ end }}
