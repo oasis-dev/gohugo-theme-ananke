@@ -1,9 +1,17 @@
 <footer class="{{ .Site.Params.background_color_class | default "bg-black" }} bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="{{ .Site.BaseURL }}" >
-    &copy; {{ now.Format "2006" }} {{ .Site.Title }}
+    &copy; {{ now.Format "2006" }} OASIS Open
   </a>
-    <div class="oasis-required-language"><p>An <a href="https://oasis-open-projects.org/">OASIS Open Project</a>. All Rights Reserved. OASIS <a href="https://www.oasis-open.org/policies-guidelines/trademark">trademark</a>, <a href="https://www.oasis-open.org/policies-guidelines/ipr">IPR</a>, <a href="https://www.oasis-open.org/policies-guidelines/privacy">Privacy</a>, and other <a href="https://www.oasis-open.org/policies-guidelines">policies</a> apply. <br /><a href="communications@oasis-open.org">Contact OASIS</a> for details.</p></div>
+    <div class="oasis-required-language"><p>{{ .Site.Title }} is an <a href="https://oasis-open-projects.org/">OASIS Open Project</a>. All Rights Reserved. 
+      <br />OASIS <a href="https://www.oasis-open.org/policies-guidelines/trademark">trademark</a>, <a href="https://www.oasis-open.org/policies-guidelines/ipr">IPR</a>, <a href="https://www.oasis-open.org/policies-guidelines/privacy">Privacy</a>, and other <a href="https://www.oasis-open.org/policies-guidelines">policies</a> apply. 
+      <br /><a href="communications@oasis-open.org">Contact OASIS</a> for details.</p>
+      <div>
+        {{ if .Params.mailing_list_subscribe }}
+          <p>Subscribe to our <a href="{{ .Params.mailing_list_subscribe }}">mailing list</a>.</p>
+        {{ end }}
+      </div>
+    </div>
     <div>{{ partial "social-follow.html" . }}</div>
   </div>
 </footer>
